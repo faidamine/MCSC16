@@ -1,0 +1,9 @@
+neeeeed help
+
+i forgot my password , if u can help me
+i have the memory dump
+try to analyze this file and find the password :
+
+my username is : challenge2016
+
+the dump is in the folder foreinsic 1

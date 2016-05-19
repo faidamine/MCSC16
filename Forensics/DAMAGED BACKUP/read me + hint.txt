@@ -1,0 +1,16 @@
+i forgot my administrator password
+i had a backup file but it was damaged :(
+
+try to analyze the file, if u can find my password
+my username is challenge
+
+the file is in folder forensic2
+
+Best regards
+
+youssef
+
+
+
+Hint! 
+analyze it , get the good format then restore it and try to find my password :p

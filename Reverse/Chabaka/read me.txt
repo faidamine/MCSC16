@@ -1,0 +1,9 @@
+Warmup
+
+NB: flag patern: [0-9A-Za-z]+
+
+NB2: Le challenge contient un effet de bord.
+
+#Writeup : 
+
+https://www.youtube.com/watch?v=SxXltcUCUqY&feature=share
