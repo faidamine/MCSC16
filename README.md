@@ -2,4 +2,4 @@
 
 Writeups for the MCSC16 CTF , at https://mcsc16.ctf
 
-![](scoreboard.PNG)
+![](http://www.hostingpics.net/viewer.php?id=407022image318.jpg)
