@@ -7,7 +7,7 @@ Write-up :
 
 Steps : 
 
-After We found the hidden directory '.git' we should download the directory
+After We found the hidden directory '.git' now we need to download it .
 
 root@bt:~ wget -r -nH -e html_extension=Off --reject '*.html*' 'http://10.0.2.2/web1/.git/'
 root@bt:~ cd .git
